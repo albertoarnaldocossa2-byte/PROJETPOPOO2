@@ -131,7 +131,7 @@ public class Menu {
                             String saidaStr = reader.readLine();
                             LocalDate dataSaida = LocalDate.parse(saidaStr);
 
-                            Reserva novaReserva = new Reserva(idAutomatico, cliente, quartoSelecionado, dataEntrada, dataSaida);
+                            Reserva novaReserva = new Reserva( cliente, quartoSelecionado, dataEntrada, dataSaida);
                             meuHotel.cadastrarReserva(novaReserva);
 
                             System.out.println(" Reserva numero " + idAutomatico + " criada com sucesso para " + nome);
@@ -175,10 +175,10 @@ public class Menu {
 
                             Reserva reservaEncontrada = null;
                             for (Reserva r : meuHotel.getReservas()) {
-                                if (r.getIdReserva() == idProcurado) {
+                               /* if (r.getIdReserva() == idProcurado) {
                                     reservaEncontrada = r;
                                     break;
-                                }
+                                }*/
                             }
                             if (reservaEncontrada == null) {
                                 System.out.println("Nenhuma reserva encontrada com o ID " + idProcurado);
@@ -371,7 +371,7 @@ public class Menu {
                         System.out.print("Sexo: ");
                         String sexo = reader.readLine();
                         System.out.print("Contacto: ");
-                        int contacto = Integer.parseInt(reader.readLine());
+                        String contacto = (reader.readLine());
                         System.out.print("Endereco: ");
                         String endereco = reader.readLine();
                         System.out.print("Documento de Bi: ");

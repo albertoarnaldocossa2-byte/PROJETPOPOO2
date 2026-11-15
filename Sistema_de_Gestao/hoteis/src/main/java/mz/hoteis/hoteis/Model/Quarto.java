@@ -1,12 +1,25 @@
 package mz.hoteis.hoteis.Model;
 
-
 import java.util.ArrayList;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "quarto")
 public class Quarto {
 
-    private int numeroQuarto;
-    private String tipoQuarto;
-    private double precoDiario;
+    @Id
+    @Column(name = "numeroQuarto")
+       private int numeroQuarto;
+
+    @Column(name = "tipoQuarto")
+       private String tipoQuarto;
+
+    @Column(name = "precoDiario")
+       private double precoDiario;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "EstadoQuarto")
     private EstadoQuarto EstadoQuarto;
 
 
@@ -17,6 +30,10 @@ public class Quarto {
         this.precoDiario = precoDiario;
         this.EstadoQuarto = EstadoQuarto.DISPONIVEL;
 
+
+    }
+
+    public Quarto(){
 
     }
 

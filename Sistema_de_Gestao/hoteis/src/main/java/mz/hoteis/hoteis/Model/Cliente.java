@@ -25,6 +25,8 @@ public class Cliente extends Pessoa {
         this.ClienteHospeda= new ArrayList<>();
     }
 
+    public Cliente(){}
+
 
     public int getIdPessoa() {
         return idPessoa;
