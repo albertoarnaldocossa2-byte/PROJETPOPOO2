@@ -1,8 +1,18 @@
 package mz.hoteis.hoteis.Model;
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "Lavandaria")
+@PrimaryKeyJoinColumn(name = "IdServico")
 
 public class Lavandaria extends Servico {
 
-    private int quantPecas ;
+    @Column(name = "quantPecas")
+      private int quantPecas ;
+
+
+    public Lavandaria(){}
 
     public Lavandaria(int quantPecas, double precoBase) {
         super(precoBase);

@@ -1,8 +1,16 @@
 package mz.hoteis.hoteis.Model;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Eventos")
+@PrimaryKeyJoinColumn(name = "IdServico")
 
 public class Eventos extends Servico{
 
-    private int numeroDias;
+    @Column(name = "numeroDias")
+      private int numeroDias;
+
+    public Eventos(){}
 
     public Eventos(int numeroDias, double precoBase) {
         super(precoBase);

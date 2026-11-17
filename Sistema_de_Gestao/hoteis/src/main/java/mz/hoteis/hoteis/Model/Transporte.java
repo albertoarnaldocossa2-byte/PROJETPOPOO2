@@ -1,9 +1,18 @@
 package mz.hoteis.hoteis.Model;
+import jakarta.persistence.*;
 
+
+@Entity
+@Table(name = "Transporte")
+@PrimaryKeyJoinColumn(name = "IdServico")
 
 public class Transporte extends Servico{
 
-    private double distanciaKm;
+    @Column(name = "distanciakm")
+      private double distanciaKm;
+
+
+    public Transporte(){}
 
     public Transporte(double distanciaKm, double precoBase) {
         super(precoBase);
